@@ -17,6 +17,10 @@
                     You are logged in!
 
                     
+          <li class="list-group-item bg-secondary">
+            <a class="btn btn-link btn-block text-warning" href="{{url('edit_user')}}/{{ ucfirst(Auth()->user()->id) }}">
+              <strong> Edit Profile </strong></a>
+          </li>
                 </div>
             </div>
         </div>

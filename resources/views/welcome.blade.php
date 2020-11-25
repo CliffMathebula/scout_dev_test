@@ -47,7 +47,7 @@
                 @if (Route::has('login'))
                 @auth
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url('/home') }}">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 @else
                 <li class="nav-item">
@@ -218,6 +218,45 @@
     </div>
     </div>
     </div>
+    <!-- Display Listed jobs if jobs is greater than zero -->
+    <br />
+    <p class="alert alert-success"> <strong>Listed Users</strong></p>
+    <div class="card">
+        <!-- looops through the listed jobs -->
+        @foreach($users as $user)
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Bio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->surname }}</td>
+                    <td>{{ $user->username }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->mobile }}</td>
+                    <td>{{ $user->job_title }}</td>
+                    <td>{{ $user->bio }}</td>
+                    <td><a class="btn btn-success btn-block text-warning" 
+                    href="{{url('edit_user')}}/{{ ucfirst(Auth()->user()->id) }}">
+              <strong> Edit Profile </strong></a></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        @endforeach
+
 </body>
 
 </html>

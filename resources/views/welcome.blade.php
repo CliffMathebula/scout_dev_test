@@ -249,7 +249,7 @@
                     <td>{{ $user->job_title }}</td>
                     <td>{{ $user->bio }}</td>
                     <td><a class="btn btn-success btn-block text-warning" 
-                    href="{{url('edit_user')}}/{{ ucfirst(Auth()->user()->id) }}">
+                    href="{{url('edit_user')}}/{{ $user->id }}">
               <strong> Edit Profile </strong></a></td>
                 </tr>
                 

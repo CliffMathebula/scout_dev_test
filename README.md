@@ -16,7 +16,7 @@ Install JavaScript dependencies (Optional):
 Run only if you would like to make changes to the front-end
 
 npm install
-Rename .env.example to .env then set the app key by running the following command:
+Rename .env.example to .env and change the database username and password then set the app key by running the following command:
 
 php artisan key:generate --ansi
 Create a new Database and configure it in the .env then run the migrate command:
